@@ -110,6 +110,14 @@ class HomeController extends Controller
       $data['categories'] = get_all_active_category();
       $request->slug = clear($request->slug);
       $data['postDetails'] = get_slug_posts($request->slug);
+      if(empty($data['postDetails'])){
+         return abort(404);
+      }
+
+      DB::table('postDetails')->where('postDetailID',$data['postDetails']->postDetailID)->update([
+        "postHit" => DB::raw('postHit + 1')
+      ]);
+
       $data['pageInfo'] = [
         "title" => "TOLGA KOCADAĞ",
         "description" => $data['postDetails']->postDescription,
