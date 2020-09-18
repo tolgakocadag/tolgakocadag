@@ -12,7 +12,7 @@ function get_all_active_category(){
 
 //verilen slug değerine göre gönderi detaylarını çek
 function get_slug_posts($slug){
-  return DB::table('posts')->select('postTitle','postSlug','postImage','name','posts.created_at','postContent','postDescription','postTag')
+  return DB::table('posts')->select('postTitle','postSlug','postImage','name','posts.created_at','postContent','postDescription','postTag',"postDetailID")
   ->leftJoin('postDetails','postDetails.postID','=','posts.postID')
   ->leftJoin('users','users.userID','=','posts.created_user')
   ->where('postSlug',$slug)->first();
