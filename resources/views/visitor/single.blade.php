@@ -40,7 +40,7 @@
                                                               </div> --}}
                                                               <hr>
                                                               <div class="entry-content">
-                                                                  <div class="entry-description">
+                                                                  <div class="entry-description" style="word-wrap:break-word;">
                                                                     {!! $postDetails->postContent !!}
                                                                   </div>
                                                               </div><!-- .entry-content -->
