@@ -3,7 +3,7 @@
             <div id="vk-home-default-left">
 
                 <!--HOME DEFAULT HOT NEWS-->
-                {{-- <div class="vk-home-section-hotnews">
+                <div class="vk-home-section-hotnews">
                     <div class="tab-default tabbable-panel">
                         <div class="tabbable-line">
                             <div class="uni-sticker-label">
@@ -1106,7 +1106,7 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
 
             </div>
         </div>
