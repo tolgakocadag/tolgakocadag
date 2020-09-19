@@ -1,6 +1,6 @@
 @include('visitor.top_index')
 
-                        <div class="col-md-8">
+                        <div class="col-md-8" style="padding-top:60px">
                           <div class="uni-image-post-body">
                               <div class="container">
                                   <div class="row">

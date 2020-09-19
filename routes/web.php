@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Visitor\HomeController@index')->name('homepage');
 Route::get('/blog/{slug}', 'Visitor\HomeController@blog')->name('blog');
+Route::get('/category/{slug}', 'Visitor\CategoryController@category')->name('category');
+Route::get('/category/{slug}/{page}', 'Visitor\CategoryController@category')->name('category');
 
 Route::get('/sitemap.xml', 'Visitor\HomeController@sitemap');
 
