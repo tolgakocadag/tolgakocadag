@@ -25,6 +25,17 @@
     <link rel="stylesheet" href="{{ asset('public_assets/css/') }}/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('public_assets/css/') }}/custom.css">
     <link rel="shortcut icon" href="{{ asset('public_assets/logo/favicon/')}}/favicon-32x32.png">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178422037-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-178422037-1');
+    </script>
+
 </head>
 <body onload="startTime()" class="visitor_scrollbar">
 <!--Load Page-->

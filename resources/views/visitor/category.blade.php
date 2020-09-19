@@ -52,7 +52,7 @@
                         </div>
                     </div>
 
-                    <ul class="loop-pagination" style="padding-bottom:60px;">
+                    <ul class="loop-pagination" style="padding-bottom:20px;">
                         <li class="current"><a class="page-numbers">1</a></li>
                         <li><a class="page-numbers" href="#">2</a></li>
                         <li><a class="page-numbers" href="#">3</a></li>
