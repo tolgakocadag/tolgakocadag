@@ -2954,7 +2954,7 @@ hr {
         transition: all 0.5s; }
 
 #vk-home-default-body {
-  padding: 60px 0; }
+}
 
 .vk-home-section-hotnews .vk-section1-eco .vk-section1-eco-item {
   border-bottom: 1px solid #eaeaea;
@@ -7576,7 +7576,7 @@ hr {
           color: #222; }
 
 .uni-search-result-grid .uni-search-result-grid-body {
-  padding: 60px 0; }
+}
   .uni-search-result-grid .uni-search-result-grid-body .uni-search-item-body {
     margin-top: 30px; }
     .uni-search-result-grid .uni-search-result-grid-body .uni-search-item-body .uni-item {

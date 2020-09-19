@@ -7,7 +7,7 @@ function clear($string){
 
 //tüm aktif menüleri getir
 function get_all_active_category(){
-  return DB::table('categories')->select('categoryID','categoryName','categoryTopID')->where('categoryStatus',1)->get();
+  return DB::table('categories')->select('categoryID','categorySlug','categoryName','categoryTopID')->where('categoryStatus',1)->get();
 }
 
 //verilen slug değerine göre gönderi detaylarını çek
@@ -16,6 +16,13 @@ function get_slug_posts($slug){
   ->leftJoin('postDetails','postDetails.postID','=','posts.postID')
   ->leftJoin('users','users.userID','=','posts.created_user')
   ->where('postSlug',$slug)->first();
+}
+
+function get_slug_category_post($id,$page){
+  return DB::table('posts')->select('posts.postTitle','posts.postSlug','posts.postDescription','postDetails.postImage','posts.created_at')
+  ->leftJoin('postDetails','postDetails.postID','=','posts.postID')
+  ->whereRaw('FIND_IN_SET('.$id.',posts.categoryID)')
+  ->offset($page)->limit(12)->orderBy('postDetails.postHit')->get();
 }
 
 //öne çıkan gönderileri çeken fonksiyon
@@ -54,7 +61,7 @@ function recursiveMenu($categories, $isdesktop = 1 , $main = 0   ,  $i = 0  ,  $
          if(isset($items[$page->categoryID])){
            $menus .= '<li class="has-sub"><a href="#">'.$page->categoryName.'</a>';
          } else {
-           $menus .= '<li><a href="03_01_01_left_sidebar.html">'.$page->categoryName.'</a></li>';
+           $menus .= '<li><a href="'.$page->categorySlug.'">'.$page->categoryName.'</a></li>';
          }
 
          // Açılan menude bir alt sayfa var ise nested çağır
@@ -93,7 +100,7 @@ function recursiveMenu($categories, $isdesktop = 1 , $main = 0   ,  $i = 0  ,  $
          if(isset($items[$page->categoryID])){
            $menus .= '<li class="has-sub"><a href="#">'.$page->categoryName.'</a>';
          } else {
-           $menus .= '<li><a href="03_01_01_left_sidebar.html">'.$page->categoryName.'</a></li>';
+           $menus .= '<li><a href="'.$page->categorySlug.'">'.$page->categoryName.'</a></li>';
          }
 
          // Açılan menude bir alt sayfa var ise nested çağır
