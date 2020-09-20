@@ -7,14 +7,12 @@
   echo "<url>
   <loc>https://tolgakocadag.com/</loc>
   <lastmod>".date('Y')."-".date('m')."-".date('d')."T".date('H:i:s')."+00:00</lastmod>
-  <priority>1.00</priority>
   </url>";
 
   for ($i=0; $i < count($slugs); $i++) {
     echo "<url>
     <loc>https://www.tolgakocadag.com/blog/".$slugs[$i]->postSlug."</loc>
-    <lastmod>".date('Y')."-".date('m')."-".date('d')."T".date('H:i:s')."+00:00</lastmod>
-    <priority>0.80</priority>
+    <lastmod>".str_replace(" ","T",$slugs[$i]->created_at)."+00:00</lastmod>
     </url>";
   }
 

@@ -12,7 +12,7 @@ class HomeController extends Controller
 
     public function sitemap(Request $request){
 
-      $slugs = DB::table('posts')->select('postSlug')->get();
+      $slugs = DB::table('posts')->select('postSlug','created_at')->get();
 
       return response()->view('sitemap', compact('slugs'))
           ->header('Content-Type', 'text/xml');
